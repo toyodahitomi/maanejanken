@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ま～ねじゃんけん</title>
+  <link rel="stylesheet" href="css/main.css" />
+
+</head>
+
+<body>
+
+  <div class="boru_top_box">
+    <p><img src="img/ぼる塾 PRESENTS (1).png" alt="ぼる塾"></p>
+  </div>
+
+</body>
+
+<main>
+  <div class="janken_area">
+    <div class="janken_area_mine">
+
+      <ul class="link_box">
+        <p>あなたの手は？</p>
+        <li id="gu_btn"><img src="img/メイングー.png" alt=""></li>
+        <li id="cho_btn"><img src="img/メインチョキ.png" alt="" srcset=""></li>
+        <li id="par_btn"><img src="img/メインパー.png" alt=""></li>
+      </ul>
+
+    </div>
+
+    <div class="janken_area_com">
+      <p>コンピューターの手は？</p>
+      <div class="janken_area_com_box">
+        <div id="com_hand"><img src="img/393458.png" alt="">
+        </div>
+        <div id="result">
+          結果は？
+        </div>
+
+      </div>
+
+</main>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</html>
+
+<script>
+  //ここに処理を追加
+
+  $('#gu_btn').on('click', function () {
+    const min = 0;
+    const max = 2;
+    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    console.log(randomNumber);
+
+    if (randomNumber === 0) {
+      $('#com_hand').html('<img src="メインチョキ.png" alt="サンプル画像”>');
+    } else if (randomNumber === 1) {
+      $('#com_hand').text('パー');
+    } else if (randomNumber === 2) {
+      $('#com_hand').text('グー');
+    }
+
+    if (randomNumber === 0) {
+      $('#result').text('勝ち！');
+    } else if (randomNumber === 1) {
+      $('#result').text('負け↓');
+    } else if (randomNumber === 2) {
+      $('#result').text('あいこ');
+    }
+
+
+    $('#cho_btn').on('click', function () {
+      const min = 0;
+      const max = 2;
+      const randomNumber = Math.floor(Math.random() * (max - min + 1)); + min;
+      console.log(randomNumber);
+
+      if (randomNumber === 0) {
+        $('#com_hand').text('チョキ');
+      } else if (randomNumber === 1) {
+        $('#com_hand').text('パー');
+      } else if (randomNumber === 2) {
+        $('#com_hand').text('グー');
+      }
+
+
+      if (randomNumber === 0) {
+        $('#result').text('あいこ');
+      } else if (randomNumber === 1) {
+        $('#result').text('勝ち！');
+      } else if (randomNumber === 2) {
+        $('#result').text('負け↓');
+      }
+
+      $('#par_btn').on('click', function () {
+        const min = 0;
+        const max = 2;
+        const randomNumber = Math.floor(Math.random() * (max - min + 1)); + min;
+        console.log(randomNumber);
+
+        if (randomNumber === 0) {
+          $('#com_hand').text('チョキ');
+        } else if (randomNumber === 1) {
+          $('#com_hand').text('パー');
+        } else if (randomNumber === 2) {
+          $('#com_hand').text('グー');
+        }
+        if (randomNumber === 0) {
+          $('#result').text('負け↓');
+        } else if (randomNumber === 1) {
+          $('#result').text('あいこ');
+        } else if (randomNumber === 2) {
+          $('#result').text('勝ち');
+        }
+      });
+
+    });
+
+  });
+
+
+</script>
+
+</body>
+
+</html>
